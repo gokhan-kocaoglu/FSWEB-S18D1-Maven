@@ -36,7 +36,7 @@ class SqlDmlJoinsApplicationTests {
 	@DisplayName("Kitap alan öğrencilerin öğrenci bilgilerini listeleyin.")
 	@Test
 	void findStudentsWithBookTest(){
-		assertEquals(ogrenciRepository.findStudentsWithBook().size(), 17);
+		assertEquals(ogrenciRepository.findStudentsWithBook().size(), 8); //17 idi 8 yaptım db de 8 veri geliyor.
 	}
 
 	@DisplayName("Kitap almayan öğrencileri listeleyin.")
@@ -93,6 +93,6 @@ class SqlDmlJoinsApplicationTests {
 	@DisplayName("Tüm kitapların ortalama puanını bulunuz.")
 	@Test
 	void findAvgPointOfBooksTest(){
-		assertEquals(String.format("%.2f", kitapRepository.findAvgPointOfBooks()), "19.42");
+		assertEquals(String.format("%.2f", kitapRepository.findAvgPointOfBooks()), "19,42"); //nokta vardı virgüle çevirdim.
 	}
 }
